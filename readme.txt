@@ -1,6 +1,6 @@
-# CourierRL — Autonomous Delivery Agent using Deep Reinforcement Learning
+# CourierRL
 
-CourierRL is a Deep Reinforcement Learning project where an autonomous agent learns to navigate environments, collect packages, and complete deliveries using a custom-designed DQN (Deep Q-Network) architecture.
+CourierRL is a Deep Reinforcement Learning project where an autonomous agent learns how to navigate environments, collect packages, and complete deliveries using a custom-designed DQN (Deep Q-Network) architecture.
 
 The project explores a dynamic reward-switching mechanism where the same neural policy changes objectives based on an internal pickup state:
 
@@ -14,13 +14,11 @@ Instead of using hardcoded navigation or classical pathfinding algorithms, the a
 * exploration
 * long-term Q-value optimization
 
----
-
 ## Core RL Design
 
-The state representation:
+State representation:
 
-```python
+```python id="2t0hxu"
 [
  agent_x,
  agent_y,
@@ -47,35 +45,6 @@ This allows a single neural policy to learn:
 
 using only state transitions and reward optimization.
 
----
-
-## Training Architecture
-
-The agent was trained from scratch inside a custom Python reinforcement learning environment using:
-
-* PyTorch
-* Replay Buffers
-* Target Networks
-* Bellman Q-Learning
-* Epsilon-Greedy Exploration
-* Reward Shaping
-
-The trained model was later exported to ONNX for browser deployment.
-
----
-
-## Browser AI Deployment
-
-After training, the model was exported to ONNX and deployed directly inside a React + TypeScript procedural city simulation using:
-
-* ONNX Runtime Web
-* WebAssembly
-* Real-time browser inference
-
-The AI runs completely client-side without requiring a Python backend.
-
----
-
 ## Features
 
 * Autonomous package delivery agent
@@ -87,7 +56,18 @@ The AI runs completely client-side without requiring a Python backend.
 * ONNX deployment pipeline
 * Explainable RL behavior visualization
 
----
+## Training Architecture
+
+The agent was trained from scratch in a custom Python reinforcement learning environment using:
+
+* PyTorch
+* Replay Buffers
+* Target Networks
+* Bellman Q-Learning
+* Epsilon-Greedy Exploration
+* Reward Shaping
+
+The trained model was later exported to ONNX and deployed directly inside a React + TypeScript simulation using ONNX Runtime Web and WebAssembly.
 
 ## Training Results
 
@@ -106,8 +86,6 @@ The final agent demonstrated:
 * better policy generalization
 * improved reward optimization
 
----
-
 ## Tech Stack
 
 * PyTorch
@@ -117,22 +95,6 @@ The final agent demonstrated:
 * TypeScript
 * ONNX Runtime Web
 * WebAssembly
-
----
-
-## Research & Design Notes
-
-One of the most interesting aspects of this project was designing the reward architecture, state representation, and behavioral transition logic entirely from first principles.
-
-The agent was not given:
-
-* hardcoded delivery logic
-* scripted navigation
-* predefined paths
-
-Instead, the policy learned sequential delivery behavior entirely through dynamic rewards and future Q-value optimization.
-
----
 
 ## Future Scope
 
@@ -145,8 +107,6 @@ I believe systems like this can eventually contribute toward:
 * autonomous vehicle planning
 * multi-agent coordination systems
 * exploration and space-navigation environments
-
----
 
 ## Development Note
 
