@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap');
+@import "tailwindcss";
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  
+  --color-game-bg: #86efac; /* Grass green */
+  --color-road: #334155;
+  --color-sidewalk: #cbd5e1;
+  --color-accent: #fbbf24;
+}
+
+@layer base {
+  body {
+    @apply bg-slate-900 text-slate-100 antialiased overflow-hidden select-none touch-none;
+  }
+}
